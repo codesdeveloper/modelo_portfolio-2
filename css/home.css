@@ -1,0 +1,1049 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.bg-wrap {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    position: fixed;
+    z-index: -1;
+}
+
+.bg-wrap img {
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.5;
+    object-fit: cover;
+    animation: zoom 7s;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes animMove {
+    0% {
+        transform: translateY(10rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes animMove2 {
+    0% {
+        transform: translateY(5rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.menu .bars {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    display: none;
+}
+
+.menu .bars label {
+    cursor: pointer;
+}
+
+.menu .bars i {
+    color: #f00;
+    font-size: 30px;
+}
+
+.menu .bars .x {
+    display: none;
+}
+
+.menu input {
+    display: none;
+}
+
+.menu input:checked~.bars .b {
+    display: none;
+}
+
+.menu input:checked~.bars .x {
+    display: block;
+}
+
+.menu input:checked~nav .menu-nav {
+    transform: translate(0, 0);
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    list-style: none;
+    position: fixed;
+    transition: opacity 0.5s;
+}
+
+.menu-icon li {
+    opacity: 0;
+}
+
+.menu-icon i {
+    color: #fff;
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 70px;
+    border-bottom: 1px solid transparent;
+}
+
+.menu-icon li:nth-child(1) {
+    animation: animMove 3s forwards;
+}
+
+.menu-icon li:nth-child(2) {
+    animation: animMove 3s 0.5s forwards;
+}
+
+.menu-icon li:nth-child(3) {
+    animation: animMove 3s 1s forwards;
+}
+
+.menu-icon li:nth-child(4) {
+    animation: animMove 3s 1.5s forwards;
+}
+
+.menu-icon li:nth-child(5) {
+    animation: animMove 3s 2s forwards;
+}
+
+.menu-nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    list-style: none;
+    font-weight: bold;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-nav li {
+    opacity: 0;
+}
+
+.menu-nav li:nth-child(1) {
+    animation: animMove2 3s forwards;
+}
+
+.menu-nav li:nth-child(2) {
+    animation: animMove2 3s 0.5s forwards;
+}
+
+.menu-nav li:nth-child(3) {
+    animation: animMove2 3s 1.5s forwards;
+}
+
+.menu-nav li:nth-child(4) {
+    animation: animMove2 3s 2s forwards;
+}
+
+.menu-nav li:nth-child(5) {
+    animation: animMove2 3s 2.5s forwards;
+}
+
+.menu-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.menu-nav a:hover {
+    color: #f00;
+}
+
+.menu-icon i:hover {
+    color: #f00;
+}
+
+.box-title {
+    position: fixed;
+    top: 30%;
+    left: 20%;
+    color: #fff;
+}
+
+.box-title h1 {
+    font-size: 50px;
+    text-shadow: 5px 4px 0px #000;
+    color: #fff;
+    font-family: 'Montserrat Alternates', sans-serif;
+    letter-spacing: 8px;
+    opacity: 0;
+    animation: animMove 4s forwards;
+    transition: opacity 0.5s;
+}
+
+.box-title p {
+    font-size: 24px;
+    text-shadow: 4px 2px 0px #000;
+    margin: 20px 0;
+    letter-spacing: 5px;
+}
+
+.box-title p span {
+    display: block;
+    padding: 5px 0;
+    opacity: 0;
+    color: #f00;
+    font-weight: bold;
+}
+
+.box-title p span:nth-child(1) {
+    animation: animMove 4s 1s forwards;
+}
+
+.box-title p span:nth-child(2) {
+    animation: animMove 4s 1.5s forwards;
+}
+
+.box-title p span:nth-child(3) {
+    animation: animMove 4s 2s forwards;
+}
+
+.about-me {
+    background: -webkit-gradient(linear, left top, right top, from(#fff), to(#e3ffff)) no-repeat;
+    width: 100%;
+    min-height: 110vh;
+    padding: 40px 0;
+}
+
+.about-me h1 {
+    font-family: 'Open Sans';
+    text-align: center;
+    font-size: 40px;
+}
+
+.about-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.about-me .image-wraper {
+    width: 300px;
+    height: 300px;
+    border: 2px solid cyan;
+    border-radius: 1000px;
+    padding: 3px;
+}
+
+.about-me .image-wraper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1000px;
+}
+
+.about-me p {
+    max-width: 50%;
+    font-family: cursive;
+    padding: 40px 0;
+}
+
+.skills-icon {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 60px;
+    list-style: none;
+}
+
+.skills-icon li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.skills-icon img {
+    width: 60px;
+    margin-bottom: 5px;
+    margin: 0 auto;
+}
+
+.skills-icon span {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.skills-add {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 60px;
+}
+
+.skills-add li {
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.skills-basic {
+    list-style: none;
+    text-align: center;
+    max-width: 40%;
+}
+
+.skills-basic li {
+    display: inline-block;
+}
+
+.skills-basic span,
+.skills-additional span {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: #000;
+    text-align: center;
+    display: block;
+}
+
+.skills-additional {
+    list-style: none;
+    max-width: 40%;
+    text-align: center;
+}
+
+.skills-additional li {
+    display: inline-block;
+}
+
+.portfolio {
+    width: 100%;
+    min-height: 110vh;
+    padding: 40px;
+}
+
+.portfolio h1 {
+    font-family: 'Open Sans';
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 3px 2px 0 #000;
+}
+
+.portfolio>p {
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    text-shadow: 2px 1px 0 #000;
+}
+
+.portfolio .projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 30px 20px;
+}
+
+.box-project {
+    height: 270px;
+    box-shadow: 0 0 1px #fff;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-project:hover img {
+    opacity: 0.5;
+}
+
+.box-project:hover h1 {
+    animation: animMove2 1s forwards;
+}
+
+.box-project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.box-project h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 4px 3px 0 #000;
+    z-index: 1;
+    opacity: 0;
+}
+
+.modal-project {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000d;
+    align-items: center;
+    display: none;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.modal-text {
+    margin-top: 80px;
+    height: fit-content;
+    max-width: 45%;
+}
+
+.modal-text h1 {
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.modal-text p {
+    color: #fff;
+    font-family: cursive;
+    font-size: 14px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.modal-text p a {
+    color: #0bf;
+}
+
+.modal-info {
+    width: 100%;
+    max-width: 55%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 45px;
+    margin: auto 0;
+    overflow: hidden;
+}
+
+.modal-info img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #fff;
+}
+
+.modal-info .slide{
+    width: 100%;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #aaa;
+}
+
+.modal-info .slide li{
+    display: none;
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.slide-ind{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    justify-content: space-around;
+}
+
+.slide-ind input{
+    display: none;
+}
+
+.slide-ind label{
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+.slide-ind label span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 10px;
+    border: 3px solid #fff;
+}
+
+.slide-ind input:checked + span{
+    background: #000;
+}
+
+.modal-content .close{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.modal-content .close i {
+    font-size: 40px;
+    color: #f00;
+}
+
+.modal-project span:hover i {
+    color: #aaa;
+}
+
+
+.modal-info span{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+}
+
+.modal-project .prev{
+    left: 0px;
+}
+
+.modal-content .next{
+    right: 0px;
+}
+
+.modal-info:hover span{
+    display: block;
+}
+
+.modal-project .prev i,
+.modal-content .next i{
+  color: #fff;
+  font-size: 60px;
+}
+
+.contact {
+    background: -webkit-gradient(linear, left top, right top, from(#fff), to(#e3ffff)) no-repeat;
+    width: 100%;
+    min-height: 110vh;
+    padding: 10px 0;
+}
+
+.contact h1 {
+    font-family: 'Open Sans';
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.contact p {
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #000;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: cursive;
+    padding: 0 10px;
+}
+
+.contact-box {
+    margin: 0 auto;
+    width: 40%;
+    min-width: 600px;
+}
+
+.contact-box label {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background: #D9D9D9;
+    border: 1px solid transparent;
+    margin: 5px 0 20px 0;
+    font-size: 15px;
+    color: #f00;
+    font-weight: bold;
+    outline: 0;
+}
+
+.contact-box input::placeholder,
+.contact-box textarea::placeholder {
+    color: #000;
+    font-size: 13 px;
+    font-weight: normal;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+    border: 1px solid #f00;
+}
+
+.contact-box textarea {
+    resize: none;
+    height: 200px;
+}
+
+.contact-box button {
+    width: 100%;
+    padding: 20px 10px;
+    border-radius: 10px;
+    outline: 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 17px;
+    background: #0ff;
+    color: #f00;
+}
+
+.contact-box button:hover {
+    color: #900;
+}
+
+footer {
+    color: #fff;
+}
+
+.footer-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 20px 70px;
+}
+
+.footer-title {
+    text-align: center;
+}
+
+.footer-title h1 {
+    color: #E3FFFF;
+    text-shadow: 1px 1px 0 #666;
+
+}
+
+.footer-title p {
+    font-family: 'Pompiere', cursive;
+    color: #fff;
+    text-shadow: 1px 1px 0 #666;
+}
+
+.footer-header span {
+    background: #fff;
+    height: 3px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-main ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-main ul li {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.footer-main ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-main ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 2px 1px 0 #888;
+}
+
+.footer-main ul li a:hover {
+    color: #f008;
+}
+
+.footer-main ul li i {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.footer-main ul:nth-child(2),
+.footer-main ul:nth-child(3) {
+    justify-content: start;
+}
+
+.footer-main ul li p {
+    font-size: 12px;
+    text-shadow: 2px 1px 0 #888;
+}
+
+.copy {
+    background: #000;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    padding: 15px 0;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .menu-icon {
+        margin-left: 40px;
+    }
+
+    .menu-nav {
+        left: auto;
+        right: 0;
+        transform: none;
+    }
+
+    .menu-nav a {
+        font-size: 16px;
+    }
+
+    .menu-icon i {
+        font-size: 20px;
+    }
+
+    .box-title h1 {
+        font-size: 40px;
+        top: 35%;
+        left: 22%;
+    }
+
+    .box-title p {
+        font-size: 17px;
+    }
+
+    .about-box {
+        flex-direction: column;
+    }
+
+    .about-me h1,
+    .portfolio h1,
+    .contact h1 {
+        font-size: 30px;
+    }
+
+    .about-me .image-wraper {
+        width: 250px;
+        height: 250px;
+        margin: 30px 0;
+    }
+
+    .about-me p {
+        max-width: 80%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .skills-icon {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .skills-icon img {
+        width: 50px;
+    }
+
+    .skills-icon span {
+        font-size: 12px;
+    }
+
+    .skills-add li {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .skills-basic span,
+    .skills-additional span {
+        font-size: 26px;
+    }
+
+    .portfolio{
+        padding:40px 20px;
+    }
+
+    .portfolio .projects {
+        grid-template-columns: auto auto;
+    }
+
+    .portfolio>p,
+    .contact p {
+        font-size: 12px;
+    }
+
+    .box-project h1 {
+        font-size: 20px;
+    }
+
+    .modal-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 200px;
+    }
+
+    .modal-info{
+        max-width: 85%;
+        padding: 10px;
+    }
+
+    .modal-text {
+        max-width: none;
+    }
+
+    .modal-text p{
+        padding: 15px;
+    }
+
+    .modal-info span{
+        display: block;
+    }
+
+    .modal-project .prev{
+        left: 12px;
+    }
+
+    .modal-project .next{
+        right: 12px;
+    }
+
+    .modal-project .prev i,
+    .modal-content .next i{
+        font-size: 40px;
+        color: #000;
+    }
+
+    .modal-content .close i{
+        font-size: 30px;
+    }
+
+    .slide-ind label span{
+        background: #000;
+        border: 3px solid #000;
+    }
+    
+    .slide-ind input:checked + span{
+        background: #fff;
+    }
+
+    .slide-ind{
+        bottom: 15px;
+    }
+
+    .slide-ind label span{
+        width: 15px;
+        height: 15px;
+        opacity: 0.7;
+    }
+
+    .contact-box {
+        width: 70%;
+        min-width: auto;
+    }
+
+    .contact-box label {
+        font-size: 14px;
+    }
+
+    .contact-box button {
+        font-size: 14px;
+    }
+
+    .contact-box input::placeholder,
+    .contact-box textarea::placeholder {
+        font-size: 11px;
+    }
+
+    .footer-title h1 {
+        font-size: 23px;
+    }
+
+    .footer-title p {
+        font-size: 13px;
+    }
+
+    .footer-header span {
+        width: 70%;
+    }
+
+    .footer-main ul li a {
+        font-size: 11px;
+    }
+
+    .copy {
+        font-size: 13px;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+
+    .menu .bars {
+        display: block;
+        z-index: 3;
+    }
+
+    .menu-nav {
+        flex-direction: column;
+        width: 100%;
+        background: -webkit-gradient(linear, left top, right top, from(#fff), to(#e3ffff)) no-repeat;
+        top: 0;
+        padding: 20px 20px;
+        overflow: hidden;
+        z-index: 2;
+        transform: translate(0, -100%);
+        transition: transform 2s;
+    }
+
+    .menu-nav li {
+        padding: 20px 0;
+        animation: none;
+    }
+
+    .menu-nav a {
+        color: #f00;
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .box-title {
+        left: 15%;
+    }
+
+    .skills-icon {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-icon img {
+        width: 40px;
+    }
+
+    .skills-add {
+        display: block;
+    }
+
+    .skills-add ul {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+
+    .skills-add .skills-basic {
+        margin-bottom: 30px;
+    }
+
+    .portfolio{
+        padding: 40px 0;
+    }
+
+    .portfolio .projects {
+        grid-template-columns: auto;
+    }
+
+    .modal-info{
+        max-width: 95%;
+        padding: 5px;
+    }
+
+    .modal-info .slide li{
+        width: 400px;
+        height: 400px;
+    }
+
+    .slide-ind label{
+        margin-left : 30px;
+    }
+
+    .footer-main ul li p {
+        display: none;
+    }
+
+    .footer-main ul li i {
+        font-size: 25px;
+    }
+
+}

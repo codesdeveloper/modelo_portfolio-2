@@ -1,0 +1,4 @@
+[ ] finalizar responsidade
+[ ] Corrigir fonte
+[ ] Testar
+[ ] Aparecer no google SIO
