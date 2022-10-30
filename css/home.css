@@ -18,12 +18,24 @@ header {
     overflow: hidden;
 }
 
+body {
+    background: -webkit-gradient(linear, left top, right top, from(#fff), to(#e3ffff)) no-repeat;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 .bg-wrap {
     width: 100%;
+    max-width: 1500px;
     height: 100vh;
     background: #000;
     position: fixed;
-    z-index: -1;
+    z-index: -3;
+    overflow: hidden;
 }
 
 .bg-wrap img {
@@ -258,9 +270,8 @@ header {
 
 .about-box {
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
-    margin-top: 30px;
+    margin: 60px 0;
 }
 
 .about-me .image-wraper {
@@ -279,8 +290,10 @@ header {
 
 .about-me p {
     max-width: 50%;
-    font-family: cursive;
-    padding: 40px 0;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 1px;
 }
 
 .skills-icon {
@@ -318,8 +331,9 @@ header {
 .skills-add li {
     font-weight: bold;
     color: #000;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    line-height: 2;
 }
 
 .skills-basic {
@@ -354,8 +368,8 @@ header {
 
 .portfolio {
     width: 100%;
-    min-height: 110vh;
-    padding: 40px;
+    padding: 50px;
+    background: #333;
 }
 
 .portfolio h1 {
@@ -363,7 +377,7 @@ header {
     text-align: center;
     font-size: 40px;
     color: #fff;
-    text-shadow: 3px 2px 0 #000;
+    text-shadow: 0 0 2px;
 }
 
 .portfolio>p {
@@ -373,20 +387,19 @@ header {
     color: #fff;
     margin-bottom: 30px;
     margin-top: 10px;
-    text-shadow: 2px 1px 0 #000;
+    text-shadow: 0 0 2px;
 }
 
 .portfolio .projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 0 20px;
     flex-wrap: wrap;
-    gap: 30px 20px;
+    gap: 30px;
 }
 
 .box-project {
     height: 270px;
-    box-shadow: 0 0 1px #fff;
+    box-shadow: 0 0 5px #fff;
     position: relative;
     background: #000;
     overflow: hidden;
@@ -429,9 +442,10 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000d;
-    align-items: center;
+    background: -webkit-gradient(linear, left top, right top, from(#fff), to(#e3ffff)) no-repeat;
     display: none;
+    z-index: 3;
+    justify-content: center;
 }
 
 .modal-content {
@@ -439,6 +453,10 @@ header {
     justify-content: space-evenly;
     width: 100%;
     flex-wrap: wrap;
+    max-width: 1500px;
+    position: absolute;
+    top: 0;
+    padding-bottom: 50px;
 }
 
 .modal-text {
@@ -450,14 +468,17 @@ header {
 .modal-text h1 {
     margin-bottom: 30px;
     padding: 0 15px;
+    color: #000;
 }
 
 .modal-text p {
-    color: #fff;
-    font-family: cursive;
-    font-size: 14px;
+    color: #000;
+    font-size: 20px;
     padding: 0 20px;
     box-sizing: border-box;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: justify;
 }
 
 .modal-text p a {
@@ -465,83 +486,71 @@ header {
 }
 
 .modal-info {
+    max-width: 50%;
     width: 100%;
-    max-width: 55%;
     display: flex;
-    justify-content: end;
     align-items: center;
-    position: relative;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 45px;
-    margin: auto 0;
     overflow: hidden;
+    background: #fff;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
+    justify-content: space-evenly;
+    margin-top: 80px;
+    height: fit-content;
+}
+
+.modal-info .slide {
+    margin: 30px 0;
+}
+
+.modal-info .slide li {
+    display: none;
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+    width: 100%;
 }
 
 .modal-info img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 5px #fff;
 }
 
-.modal-info .slide{
+.slide-ind {
     width: 100%;
-    background: #fff;
-    border-radius: 30px;
-    box-shadow: 0 0 10px #aaa;
-}
-
-.modal-info .slide li{
-    display: none;
-    opacity: 0;
-    transition: transform 1s, opacity 1s;
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
-}
-
-.slide-ind{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    z-index: 2;
+    margin-bottom: 50px;
 }
 
-.slide-ind input{
+.slide-ind input {
     display: none;
 }
 
-.slide-ind label{
-    margin-left: 40px;
-    margin-bottom: 40px;
-}
-
-.slide-ind label span{
+.slide-ind label span {
     display: block;
     width: 20px;
     height: 20px;
-    background: #fff;
-    border-radius: 10px;
-    border: 3px solid #fff;
-}
-
-.slide-ind input:checked + span{
     background: #000;
+    border-radius: 10px;
+    border: 3px solid #000;
 }
 
-.modal-content .close{
-    position: fixed;
-    top: 30px;
-    right: 30px;
+.slide-ind input:checked+span {
+    background: #fff;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     cursor: pointer;
 }
 
 .modal-content .close i {
-    font-size: 40px;
+    font-size: 55px;
     color: #f00;
 }
 
@@ -549,38 +558,24 @@ header {
     color: #aaa;
 }
 
-
-.modal-info span{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.modal-info span {
     cursor: pointer;
-    display: none;
 }
 
-.modal-project .prev{
-    left: 0px;
-}
-
-.modal-content .next{
-    right: 0px;
-}
-
-.modal-info:hover span{
+.modal-info:hover span {
     display: block;
 }
 
 .modal-project .prev i,
-.modal-content .next i{
-  color: #fff;
-  font-size: 60px;
+.modal-content .next i {
+    color: #000;
+    font-size: 60px;
 }
 
 .contact {
     background: -webkit-gradient(linear, left top, right top, from(#fff), to(#e3ffff)) no-repeat;
     width: 100%;
-    min-height: 110vh;
-    padding: 10px 0;
+    padding: 10px 0 50px 0;
 }
 
 .contact h1 {
@@ -592,12 +587,11 @@ header {
 
 .contact p {
     text-align: center;
-    font-size: 15px;
+    font-size: 18px;
     letter-spacing: 1px;
     color: #000;
     margin-bottom: 20px;
     margin-top: 10px;
-    font-family: cursive;
     padding: 0 10px;
 }
 
@@ -608,9 +602,8 @@ header {
 }
 
 .contact-box label {
-    font-family: cursive;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 18px;
     letter-spacing: 2px;
 }
 
@@ -723,7 +716,7 @@ footer {
 .footer-main ul li a {
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     margin-bottom: 8px;
     font-weight: bold;
@@ -733,7 +726,9 @@ footer {
 .footer-main ul li a {
     color: #fff;
     text-decoration: none;
-    text-shadow: 2px 1px 0 #888;
+    text-shadow: 2px 1px 0 #000;
+    font-family: 'Montserrat Alternates', sans-serif;
+    letter-spacing: 2px;
 }
 
 .footer-main ul li a:hover {
@@ -741,7 +736,7 @@ footer {
 }
 
 .footer-main ul li i {
-    font-size: 30px;
+    font-size: 28px;
     margin-right: 5px;
 }
 
@@ -752,7 +747,9 @@ footer {
 
 .footer-main ul li p {
     font-size: 12px;
-    text-shadow: 2px 1px 0 #888;
+    text-shadow: 2px 1px 0 #000;
+    font-family: 'Montserrat Alternates', sans-serif;
+    letter-spacing: 2px;
 }
 
 .copy {
@@ -761,6 +758,49 @@ footer {
     width: 100%;
     font-size: 18px;
     padding: 15px 0;
+}
+
+@media only screen and (min-width: 1500px) {
+
+    .box-title{
+        position: absolute;
+    }
+
+    .menu-nav{
+        position: absolute;
+    }
+
+    .menu-icon{
+        position: absolute;
+    }
+
+    .modal-content {
+        border-left: 0.5px solid #000;
+        border-right: 0.5px solid #000;
+    }
+
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .box-title h1{
+        font-size: 40px;
+    }
+
+    .box-title p{
+        font-size: 20px;
+    }
+
+    .box-project {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .modal-info .slide li {
+        width: 400px;
+        height: 400px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -784,23 +824,24 @@ footer {
     }
 
     .box-title h1 {
-        font-size: 40px;
+        font-size: 30px;
         top: 35%;
         left: 22%;
     }
 
     .box-title p {
-        font-size: 17px;
+        font-size: 14px;
     }
 
     .about-box {
         flex-direction: column;
+        align-items: center;
     }
 
     .about-me h1,
     .portfolio h1,
     .contact h1 {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .about-me .image-wraper {
@@ -811,7 +852,6 @@ footer {
 
     .about-me p {
         max-width: 80%;
-        text-align: center;
         margin-bottom: 30px;
     }
 
@@ -840,8 +880,8 @@ footer {
         font-size: 26px;
     }
 
-    .portfolio{
-        padding:40px 20px;
+    .portfolio {
+        padding: 40px 20px 50px 20px;
     }
 
     .portfolio .projects {
@@ -850,71 +890,53 @@ footer {
 
     .portfolio>p,
     .contact p {
-        font-size: 12px;
+        font-size: 10px;
+    }
+
+    .box-project {
+        height: 250px;
     }
 
     .box-project h1 {
         font-size: 20px;
     }
 
+
+    .box-project:hover h1 {
+        animation: none;
+    }
+
     .modal-content {
         flex-direction: column-reverse;
         align-items: center;
-        margin-top: 200px;
     }
 
-    .modal-info{
+    .modal-info {
         max-width: 85%;
-        padding: 10px;
+        margin-top: 40px;
     }
 
     .modal-text {
         max-width: none;
     }
 
-    .modal-text p{
-        padding: 15px;
+    .modal-text p {
+        margin: 0 auto;
+        padding: 0;
+        max-width: 85%;
     }
 
-    .modal-info span{
+    .modal-info span {
         display: block;
     }
 
-    .modal-project .prev{
-        left: 12px;
+    .modal-info .slide li {
+        width: 500px;
+        height: 500px;
     }
 
-    .modal-project .next{
-        right: 12px;
-    }
-
-    .modal-project .prev i,
-    .modal-content .next i{
+    .modal-content .close i {
         font-size: 40px;
-        color: #000;
-    }
-
-    .modal-content .close i{
-        font-size: 30px;
-    }
-
-    .slide-ind label span{
-        background: #000;
-        border: 3px solid #000;
-    }
-    
-    .slide-ind input:checked + span{
-        background: #fff;
-    }
-
-    .slide-ind{
-        bottom: 15px;
-    }
-
-    .slide-ind label span{
-        width: 15px;
-        height: 15px;
-        opacity: 0.7;
     }
 
     .contact-box {
@@ -923,11 +945,11 @@ footer {
     }
 
     .contact-box label {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .contact-box button {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     .contact-box input::placeholder,
@@ -948,11 +970,41 @@ footer {
     }
 
     .footer-main ul li a {
-        font-size: 11px;
+        font-size: 10px;
+    }
+
+    .footer-main {
+        justify-content: space-between;
+    }
+
+    .footer-main ul li i {
+        font-size: 25px;
+    }
+
+    .footer-main ul li p {
+        font-size: 8px;
     }
 
     .copy {
         font-size: 13px;
+    }
+
+    .footer-title h1 {
+        font-size: 20px;
+    }
+
+    .footer-title p {
+        font-size: 10px;
+    }
+
+    .footer-header span {
+        height: 2px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .box-project {
+        height: 220px;
     }
 }
 
@@ -962,6 +1014,10 @@ footer {
     .menu .bars {
         display: block;
         z-index: 3;
+    }
+
+    .about-me p {
+        max-width: 85%;
     }
 
     .menu-nav {
@@ -995,6 +1051,10 @@ footer {
         left: 15%;
     }
 
+    .about-me h1, .portfolio h1, .contact h1{
+        font-size: 20px;
+    }
+
     .skills-icon {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1016,34 +1076,126 @@ footer {
         margin-bottom: 30px;
     }
 
-    .portfolio{
+    .portfolio {
         padding: 40px 0;
     }
 
     .portfolio .projects {
         grid-template-columns: auto;
+        gap: 40px;
     }
 
-    .modal-info{
-        max-width: 95%;
-        padding: 5px;
+    .projects .box-project {
+        height: 300px;
+        width: 85%;
+        margin: 0 auto;
     }
 
-    .modal-info .slide li{
-        width: 400px;
-        height: 400px;
+    .modal-info {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
     }
 
-    .slide-ind label{
-        margin-left : 30px;
+    .modal-info .slide li {
+        width: 350px;
+        height: 350px;
+    }
+
+    .modal-project .prev i,
+    .modal-content .next i {
+        font-size: 50px;
+    }
+
+    .modal-content .close i {
+        font-size: 40px;
+    }
+
+    .slide-ind label span {
+        width: 15px;
+        height: 15px;
+    }
+
+    .contact-box {
+        width: 85%;
+    }
+
+    .contact-box input,
+    .contact-box textarea {
+        padding: 12px 10px;
+    }
+
+    .contact-box input::placeholder,
+    .contact-box textarea::placeholder {
+        font-size: 10px;
+    }
+
+    .footer-main {
+        justify-content: space-around;
     }
 
     .footer-main ul li p {
         display: none;
     }
 
-    .footer-main ul li i {
-        font-size: 25px;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .box-title p{
+        font-size: 20px;
     }
 
+    .box-title p{
+        font-size: 10px;
+    }
+
+    .projects .box-project {
+        width: 90%;
+        height: 200px;
+    }
+
+    .modal-project .prev i,
+    .modal-content .next i {
+        font-size: 40px;
+    }
+
+    .modal-info .slide li {
+        width: 250px;
+        height: 250px;
+    }
+
+    .slide-ind {
+        margin-bottom: 10px;
+    }
+
+    .footer-header {
+        padding: 20px 10px;
+    }
+
+    .footer-title h1 {
+        font-size: 13px;
+    }
+
+    .footer-title p {
+        font-size: 8px;
+    }
+
+    .footer-header span {
+        width: 60%;
+    }
+
+    .footer-main ul li a {
+        font-size: 8px;
+    }
+
+    .footer-main ul li i {
+        font-size: 17px;
+    }
+
+    .copy {
+        font-size: 10px;
+        padding: 5px;
+    }
 }
