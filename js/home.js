@@ -97,8 +97,36 @@ const projects = [
         `,
         prints: [
             '../imgs/projeto4/1.gif',
+            '../imgs/projeto4/2.png',
         ],
             img: '../imgs/projeto4/bg.png'
+    },
+    {  
+        name: 'Rede Social',
+        description: `Pequena rede social que estou construindo usando: <b>Html</b>, <b>Css</b>, <b>Javascript</b>, <b>React</b> e <b>Firebase</b>.
+        <br/><br/>
+        O projeto ainda está em desenvolvimento e pretendo aprimorá-lo.
+        <br/><br/>
+        Com essa rede social você pode se poderá:<br/>
+        * Se cadastrar<br/>
+        * Fazer login<br/>
+        * Ver postagem de outras pessoas<br/>
+        * Postar foto e legenda<br/>
+        * Ver comentários<br/>
+        * Comentar em outras postagens<br/>
+        <br/>
+        Link para projeto: <a href="https://www.rede.leandrodev.com.br">click aqui</a>
+        <br/><br/>
+        Link para repositório: 
+        <a href="https://github.com/leandros8/instagram-clone">click aqui</a>
+        `,
+        prints: [
+            '../imgs/projeto5/1.png',
+            '../imgs/projeto5/2.png',
+            '../imgs/projeto5/3.png',
+            '../imgs/projeto5/4.png',
+        ],
+            img: '../imgs/projeto5/bg.png'
     }
 ]
 
@@ -106,7 +134,7 @@ let projec = '';
 
 projects.map((e, i) => {
     projec += `<div onclick='openModal(${i})' class="box-project">
-        <img src="${e.img}" alt="portfolio">
+        <img src="${e.img}" alt="img projects ${i}">
         <h1>${e.name}</h1>
     </div>`;
 });
@@ -194,7 +222,7 @@ function openModal(ind) {
     document.querySelector('.modal-text p').innerHTML = projec.description;
 
     for (let i = 0; i < projec.prints.length; ++i) {
-        imgs += `<li><img src="${projec.prints[i]}"/></li>`;
+        imgs += `<li><img alt="img slide ${i}" src="${projec.prints[i]}"/></li>`;
         slideInds += '<label><input name="pointer" type="radio"><span></span></label>';
     }
 
@@ -207,5 +235,6 @@ function openModal(ind) {
 
 document.querySelector('.modal-content .close').addEventListener('click', () => {
     document.querySelector('.modal-project').style.display = 'none';
-    document.documentElement.style.overflow = 'auto'
+    document.documentElement.style.overflow = 'auto';
+    ind = 0;
 }); 

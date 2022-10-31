@@ -23,14 +23,14 @@ body {
 }
 
 .container {
-    max-width: 1500px;
+    max-width: 2000px;
     margin: 0 auto;
     overflow: hidden;
 }
 
 .bg-wrap {
     width: 100%;
-    max-width: 1500px;
+    left: 0;
     height: 100vh;
     background: #000;
     position: fixed;
@@ -258,8 +258,7 @@ body {
 .about-me {
     background: -webkit-gradient(linear, left top, right top, from(#fff), to(#e3ffff)) no-repeat;
     width: 100%;
-    min-height: 110vh;
-    padding: 40px 0;
+    padding: 120px 0;
 }
 
 .about-me h1 {
@@ -368,8 +367,8 @@ body {
 
 .portfolio {
     width: 100%;
-    padding: 50px;
-    background: #333;
+    padding: 120px 50px 220px 50px;
+    background: #333d;
 }
 
 .portfolio h1 {
@@ -453,7 +452,7 @@ body {
     justify-content: space-evenly;
     width: 100%;
     flex-wrap: wrap;
-    max-width: 1500px;
+    max-width: 2000px;
     position: absolute;
     top: 0;
     padding-bottom: 50px;
@@ -496,7 +495,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 5px #000;
     justify-content: space-evenly;
-    margin-top: 80px;
+    margin-top: 20px;
     height: fit-content;
 }
 
@@ -520,9 +519,10 @@ body {
 .slide-ind {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     z-index: 2;
     margin-bottom: 50px;
+    gap: 20px;
 }
 
 .slide-ind input {
@@ -545,7 +545,7 @@ body {
 .modal-content .close {
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 35px;
     cursor: pointer;
 }
 
@@ -575,7 +575,7 @@ body {
 .contact {
     background: -webkit-gradient(linear, left top, right top, from(#fff), to(#e3ffff)) no-repeat;
     width: 100%;
-    padding: 10px 0 50px 0;
+    padding: 100px 0 120px 0;
 }
 
 .contact h1 {
@@ -779,6 +779,10 @@ footer {
         border-right: 0.5px solid #000;
     }
 
+    .box-project{
+        height: 350px;
+    }
+
 }
 
 @media only screen and (max-width: 1300px) {
@@ -803,7 +807,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
 
     .menu-icon {
         margin-left: 40px;
@@ -1168,6 +1172,10 @@ footer {
 
     .slide-ind {
         margin-bottom: 10px;
+    }
+
+    .modal-content .close{
+        right: 20px;
     }
 
     .footer-header {
