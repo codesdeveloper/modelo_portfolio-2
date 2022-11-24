@@ -90,10 +90,10 @@ const projects = [
         Joguinho do super mario feito com <b>Html</b>, <b>Css</b> e <b>Javascript</b>. Feito de forma simples e básico. Aperte spaço para começar e pular
         
         <br/><br/>
-        Link para projeto: <a href="https://leandros8.github.io/jogo-super-mario-js/">click aqui</a>
+        Link para projeto: <a href="https://leandros8.github.io/jogo-super-mario/">click aqui</a>
         <br/><br/>
         Link para repositório: 
-        <a href="https://github.com/leandros8/jogo-super-mario-js.git">click aqui</a>
+        <a href="https://github.com/leandros8/jogo-super-mario.git">click aqui</a>
         `,
         prints: [
             '../imgs/projeto4/1.gif',
