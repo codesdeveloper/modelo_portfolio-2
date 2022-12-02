@@ -1,4 +1,6 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+/*@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");*/
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
 
 * {
@@ -253,6 +255,29 @@ body {
 
 .box-title p span:nth-child(3) {
     animation: animMove 4s 2s forwards;
+}
+
+.down{
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    animation: downMove 1s infinite linear alternate;
+}
+
+.down i{
+    color: red;
+    font-size: 35px;
+    text-shadow: 1px 2px 2px #fff;
+}
+
+@keyframes downMove {
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(-20px);
+    }
 }
 
 .about-me {
@@ -798,12 +823,9 @@ footer {
     .box-project {
         height: 200px;
     }
-}
 
-@media only screen and (max-width: 1200px) {
-    .modal-info .slide li {
-        width: 400px;
-        height: 400px;
+    .down i{
+        font-size: 30px;
     }
 }
 
@@ -905,7 +927,6 @@ footer {
         font-size: 20px;
     }
 
-
     .box-project:hover h1 {
         animation: none;
     }
@@ -918,6 +939,11 @@ footer {
     .modal-info {
         max-width: 85%;
         margin-top: 40px;
+    }
+
+    .modal-info .slide li {
+        width: 400px;
+        height: 400px;
     }
 
     .modal-text {
@@ -1009,6 +1035,10 @@ footer {
 @media only screen and (max-width: 850px) {
     .box-project {
         height: 220px;
+    }
+
+    .down i{
+        font-size: 25px;
     }
 }
 
@@ -1157,6 +1187,10 @@ footer {
 
     .box-title p{
         font-size: 10px;
+    }
+
+    .down i{
+        font-size: 20px;
     }
 
     .projects .box-project {
