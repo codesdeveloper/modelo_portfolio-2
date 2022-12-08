@@ -127,6 +127,27 @@ const projects = [
             '../imgs/projeto5/4.png',
         ],
             img: '../imgs/projeto5/bg.png'
+    },
+
+    {  
+        name: 'Mundo 3D',
+        description: `Projeto em desenvolvimento com <b>Html</b>, <b>Css</b>, <b>Javascript</b> e <b>Jquery</b>. Neste projeto você poderá explorar e construir coisas em uma espécie de mundo em 3D. Utilizei um matrix para desenvolver os objetos e a câmera do game. Estou desenvolvendo novos objetos e pretendo colocar imagens, mas por enquanto deixarei disponível para vocês acessarem como forma de demonstrar meus conhecimentos.
+        <br/>
+        </br>
+        Link para o projeto:
+        <a href="https://leandros8.github.io/mundo-3d">Click aqui!</a>
+        <br/><br/>
+        Link para o projeto:
+        <a href="https://github.com/leandros8/mundo-3d">Click aqui!</a>
+        
+        `,
+        prints: [
+            '../imgs/projeto6/1.png',
+            '../imgs/projeto6/2.png',
+            '../imgs/projeto6/3.png',
+            '../imgs/projeto6/4.png',
+        ],
+            img: '../imgs/projeto6/bg.png'
     }
 ]
 
